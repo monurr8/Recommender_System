@@ -1,9 +1,12 @@
 # IMPORT PANDAS 
 import pandas as pd 
 
+#  LOADING METADATA OF MOVIES
+metadata = pd.read_csv('movies_metadata.csv', low_memory=False)
+
 
 # Print the first three rows
-metadata.head(3)
+metadata.head(6)
 
 
 # Calculate mean of vote average column
@@ -21,8 +24,8 @@ q_movies.shape
 # This is the original shape of the metadat_csv file . It has around 45k movies
 metadata.shape
 
-# Function that computes the weighted rating of each movie
 
+# Function that computes the weighted rating of each movie
 def weighted_rating(x, m=m, C=C):
     v = x['vote_count']
     R = x['vote_average']
